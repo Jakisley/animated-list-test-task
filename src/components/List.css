@@ -1,0 +1,36 @@
+.listElement {
+    width: 20vw;
+    height: 20vw;
+}
+
+.listWrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    animation: 1s addBlock;
+}
+.add {
+    animation: 1s addBlock forwards;
+}
+
+.delete {
+    animation: 1s deleteBlock forwards;
+}
+
+@keyframes addBlock {
+    0% {
+        transform: translateX(-20vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes deleteBlock {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
