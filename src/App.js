@@ -13,6 +13,7 @@ function App() {
         if (isAnimationStop) {
             setAnimationStop(false);
             dispatch(animateLastItem());
+
             setTimeout(() => {
                 dispatch(deleteBlock());
                 setAnimationStop(true);
@@ -20,12 +21,19 @@ function App() {
         }
     };
 
+    const handleAdd = () => {
+        if (isAnimationStop) {
+            setAnimationStop(false);
+            dispatch(addBlock());
+            setTimeout(() => {
+                setAnimationStop(true);
+            }, 1000);
+        }
+    };
+
     return (
         <div className="app">
-            <button
-                className="listControler"
-                onClick={() => dispatch(addBlock())}
-            >
+            <button className="listControler" onClick={handleAdd}>
                 Добавить
             </button>
             <button className="listControler" onClick={handleDelete}>

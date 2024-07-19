@@ -18,6 +18,8 @@ export const ListSlice = createSlice({
     initialState,
     reducers: {
         addBlock(state) {
+            state.bloks = state.bloks.map((el) => ({ ...el, id: counter++ }));
+
             state.bloks.unshift({
                 id: counter++,
                 backgroundColor: getRandomRGB(),
